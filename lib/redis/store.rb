@@ -6,7 +6,7 @@ class Redis
     include Ttl, Interface
 
     def initialize(options = { })
-      super
+      super options
       _extend_marshalling options
       _extend_namespace   options
     end
