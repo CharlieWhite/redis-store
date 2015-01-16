@@ -60,6 +60,7 @@ class Redis
       end
 
       def self.extract_host_options_from_uri(uri)
+        puts uri
         uri = URI.parse(uri)
         _, db, namespace = if uri.path
                              uri.path.split(/\//)
@@ -73,7 +74,7 @@ class Redis
 
         options[:db]        = db.to_i   if db
         options[:namespace] = namespace if namespace
-
+        puts options.inspect
         options
       end
 
